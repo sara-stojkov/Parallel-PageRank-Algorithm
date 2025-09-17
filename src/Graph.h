@@ -1,27 +1,23 @@
 #pragma once
-
 #include <vector>
 #include <map>
 #include <string>
 
 class Graph {
-private:
-	std::vector<std::vector<int>> adjacencyMatrix;
-	std::map<std::string, int> names;
-	int nodeNumber;
-
 public:
-	Graph();
+    Graph();                 // empty graph
+    Graph(int n);            // graph with n nodes
+    ~Graph();                // destructor
 
-	void addVertex();
-	void deleteVertex();
-	void insertEdge();
-	void deleteEdge();
+    int numNodes() const { return N; }
 
-	void generateRandom(int vertices, int edgeChance);
+    void addEdge(int from, int to);
+    const std::vector<int>& getInNeighbors(int v) const;
+    int getOutDegree(int v) const;
 
-	~Graph();
-
-
-
+private:
+    int N;
+    std::vector<std::vector<int>> adjListIn;
+    std::vector<int> outDegree;
+    std::map<std::string, int> names;
 };
