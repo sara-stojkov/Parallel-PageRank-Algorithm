@@ -25,8 +25,7 @@ Optimizations:
 
 PageRank is an iterative algorithm defined as:
 
-$$ PR(A) = (1 - d) + d \sum_{i=1}^{n} \frac{PR(T_i)}{C(T_i)} $$
-
+PR(A) = (1 - d) + d * Σ [ PR(T_i) / C(T_i) ]
 
 Iterations continue until convergence (within epsilon threshold).
 
